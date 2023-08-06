@@ -13,6 +13,7 @@
 		372D7B182A7D2A7500FA0374 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 372D7B162A7D2A7500FA0374 /* Main.storyboard */; };
 		372D7B1A2A7D2A7600FA0374 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 372D7B192A7D2A7600FA0374 /* Assets.xcassets */; };
 		372D7B1D2A7D2A7600FA0374 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 372D7B1B2A7D2A7600FA0374 /* LaunchScreen.storyboard */; };
+		372D7B252A7FBC2C00FA0374 /* ToDoListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372D7B242A7FBC2C00FA0374 /* ToDoListDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		372D7B192A7D2A7600FA0374 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		372D7B1C2A7D2A7600FA0374 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		372D7B1E2A7D2A7600FA0374 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		372D7B242A7FBC2C00FA0374 /* ToDoListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				372D7B192A7D2A7600FA0374 /* Assets.xcassets */,
 				372D7B1B2A7D2A7600FA0374 /* LaunchScreen.storyboard */,
 				372D7B1E2A7D2A7600FA0374 /* Info.plist */,
+				372D7B242A7FBC2C00FA0374 /* ToDoListDataSource.swift */,
 			);
 			path = ToDoListByUIKit;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				372D7B252A7FBC2C00FA0374 /* ToDoListDataSource.swift in Sources */,
 				372D7B152A7D2A7500FA0374 /* ViewController.swift in Sources */,
 				372D7B112A7D2A7500FA0374 /* AppDelegate.swift in Sources */,
 				372D7B132A7D2A7500FA0374 /* SceneDelegate.swift in Sources */,
