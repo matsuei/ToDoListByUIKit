@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     private weak var tableView: UITableView!
     private let cellReuseIdentifier = "Cell"
+    private let toDoListDataSource = ToDoListDataSource()
     
     override func loadView() {
         super.loadView()
@@ -40,13 +41,13 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return toDoListDataSource.list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
         var content = cell.defaultContentConfiguration()
-        content.text = "タイトル\(indexPath.row)"
+        content.text = toDoListDataSource.list[indexPath.row].title
         cell.contentConfiguration = content
         return cell
     }
