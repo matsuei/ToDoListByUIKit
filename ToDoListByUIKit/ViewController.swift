@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     private weak var tableView: UITableView!
+    private let cellReuseIdentifier = "Cell"
     
     override func loadView() {
         super.loadView()
@@ -31,9 +32,27 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        tableView.dataSource = self
+        tableView.delegate = self
     }
+}
 
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
+        var content = cell.defaultContentConfiguration()
+        content.text = "タイトル\(indexPath.row)"
+        cell.contentConfiguration = content
+        return cell
+    }
+}
 
+extension ViewController: UITableViewDelegate {
+    
 }
 
