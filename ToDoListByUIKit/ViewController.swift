@@ -33,9 +33,16 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showToDoAdditionView))
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    
+    @objc func showToDoAdditionView() {
+        let viewController = ToDoAdditionViewController.make(dataSource: toDoListDataSource)
+        viewController.delegate = self
+        present(viewController, animated: true)
     }
 }
 
@@ -55,5 +62,12 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: UITableViewDelegate {
     
+}
+
+extension ViewController: ToDoAdditionViewControllerDelegate {
+    func toDoAdditionViewController(_ viewController: ToDoAdditionViewController, didAddToDo todo: ToDo) {
+        tableView.reloadData()
+        dismiss(animated: true)
+    }
 }
 
