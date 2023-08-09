@@ -5,15 +5,11 @@
 //  Created by Kenta Matsue on 2023/08/06.
 //
 
-struct ToDoListDataSource {
-    var list: [ToDo] {
-        return [
-            ToDo(title: "ToDo1"),
-            ToDo(title: "ToDo2"),
-            ToDo(title: "ToDo3"),
-            ToDo(title: "ToDo4"),
-            ToDo(title: "ToDo5"),
-        ]
+class ToDoListDataSource {
+    private(set) var list = [ToDo]()
+    
+    func addToDo(_ todo: ToDo) {
+        list.append(todo)
     }
 }
 
