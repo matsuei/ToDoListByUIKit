@@ -14,6 +14,7 @@
 		372D7B1A2A7D2A7600FA0374 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 372D7B192A7D2A7600FA0374 /* Assets.xcassets */; };
 		372D7B1D2A7D2A7600FA0374 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 372D7B1B2A7D2A7600FA0374 /* LaunchScreen.storyboard */; };
 		372D7B252A7FBC2C00FA0374 /* ToDoListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372D7B242A7FBC2C00FA0374 /* ToDoListDataSource.swift */; };
+		372D7B292AB5C15B00FA0374 /* ToDoAdditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372D7B282AB5C15B00FA0374 /* ToDoAdditionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		372D7B1C2A7D2A7600FA0374 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		372D7B1E2A7D2A7600FA0374 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		372D7B242A7FBC2C00FA0374 /* ToDoListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListDataSource.swift; sourceTree = "<group>"; };
+		372D7B282AB5C15B00FA0374 /* ToDoAdditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoAdditionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				372D7B102A7D2A7500FA0374 /* AppDelegate.swift */,
 				372D7B122A7D2A7500FA0374 /* SceneDelegate.swift */,
 				372D7B142A7D2A7500FA0374 /* ViewController.swift */,
+				372D7B282AB5C15B00FA0374 /* ToDoAdditionViewController.swift */,
 				372D7B162A7D2A7500FA0374 /* Main.storyboard */,
 				372D7B192A7D2A7600FA0374 /* Assets.xcassets */,
 				372D7B1B2A7D2A7600FA0374 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				372D7B292AB5C15B00FA0374 /* ToDoAdditionViewController.swift in Sources */,
 				372D7B252A7FBC2C00FA0374 /* ToDoListDataSource.swift in Sources */,
 				372D7B152A7D2A7500FA0374 /* ViewController.swift in Sources */,
 				372D7B112A7D2A7500FA0374 /* AppDelegate.swift in Sources */,
