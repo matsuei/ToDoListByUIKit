@@ -54,14 +54,20 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
         var content = cell.defaultContentConfiguration()
-        content.text = toDoListDataSource.list[indexPath.row].title
+        let todo = toDoListDataSource.list[indexPath.row]
+        content.text = todo.title
+        content.image = todo.isComplete ? UIImage(systemName: "checkmark.square") : UIImage(systemName: "square")
         cell.contentConfiguration = content
         return cell
     }
 }
 
 extension ViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        toDoListDataSource.toggleIsComplete(indexPath.row)
+        tableView.deselectRow(at: indexPath, animated: true)
+        tableView.reloadRows(at: [indexPath], with: .automatic)
+    }
 }
 
 extension ViewController: ToDoAdditionViewControllerDelegate {
