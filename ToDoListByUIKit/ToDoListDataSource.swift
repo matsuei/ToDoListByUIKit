@@ -18,6 +18,13 @@ class ToDoListDataSource {
         }
         list[index].isComplete.toggle()
     }
+    
+    func delete(at index: Int) {
+        guard 0...list.count-1 ~= index else {
+            return
+        }
+        list.remove(at: index)
+    }
 }
 
 struct ToDo {
