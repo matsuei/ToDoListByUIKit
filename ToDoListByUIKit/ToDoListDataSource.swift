@@ -25,6 +25,11 @@ class ToDoListDataSource {
         }
         list.remove(at: index)
     }
+    
+    func move(from: Int, to: Int) {
+        let todo = list.remove(at: from)
+        list.insert(todo, at: to)
+    }
 }
 
 struct ToDo {
