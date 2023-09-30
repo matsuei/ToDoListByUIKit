@@ -16,7 +16,6 @@ class ViewController: UIViewController {
         super.loadView()
         let view = UIView()
         let tableView = UITableView()
-        tableView.backgroundColor = .systemBlue
         view.addSubview(tableView)
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -34,9 +33,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showToDoAdditionView))
+        toolbarItems = [.flexibleSpace(), editButtonItem]
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        tableView.setEditing(editing, animated: animated)
     }
     
     @objc func showToDoAdditionView() {
@@ -59,6 +64,14 @@ extension ViewController: UITableViewDataSource {
         content.image = todo.isComplete ? UIImage(systemName: "checkmark.square") : UIImage(systemName: "square")
         cell.contentConfiguration = content
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        toDoListDataSource.move(from: sourceIndexPath.row, to: destinationIndexPath.row)
     }
 }
 
